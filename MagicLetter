@@ -1,0 +1,32 @@
+using System;
+
+namespace MagicLetter
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char one = char.Parse(Console.ReadLine());
+            char two = char.Parse(Console.ReadLine());
+            char magic = char.Parse(Console.ReadLine());
+
+            string result = "";
+
+            for (char i = one; i <= two; i++)
+            {
+                for (char j = one; j <= two; j++)
+                {
+                    for (char k = one; k <= two; k++)
+                    {
+                        result = $"{i}{j}{k}";
+                        if (!result.Contains(magic))
+                        {
+                            Console.WriteLine(result + " ");
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
