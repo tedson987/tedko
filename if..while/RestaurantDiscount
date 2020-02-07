@@ -1,0 +1,53 @@
+using System;
+
+namespace RestaurantDiscount
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int group = int.Parse(Console.ReadLine());
+            string package = Console.ReadLine();
+            string hallName = "";
+            double price = 0;
+
+            if (group <= 50)
+            {
+                hallName = "Small Hall";
+                price = 2500;
+            }
+            else if (group >50 && group <=100)
+            {
+                hallName = "Terrace";
+                price = 5000;
+            }
+            else if (group>100 && group <=120)
+            {
+                hallName = "Great Hall";
+                price = 7500;
+            }
+            else
+            {
+                Console.WriteLine("We do not have an appropriate hall."); 
+            }
+            switch (package)
+            {
+                case "Normal":
+                    price += 500;
+                    price *= 0.95;
+                    break;
+
+                case "Gold":
+                    price += 750;
+                    price *= 0.9;
+                    break;
+
+                case "Platinum":
+                    price = 1000;
+                    price *= 0.85;
+                    break;
+            }
+            Console.WriteLine($"We can offer you the {hallName} \r\nThe price per person is {price/group:F2}$");
+        }
+    }
+}
