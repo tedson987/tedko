@@ -1,0 +1,39 @@
+using System;
+
+namespace CenterPoint
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int X1 = int.Parse(Console.ReadLine());
+            int Y1 = int.Parse(Console.ReadLine());
+            int X2 = int.Parse(Console.ReadLine());
+            int Y2 = int.Parse(Console.ReadLine());
+
+            string FindColosestPoint = GetClosestPoint(X1, Y1, X2, Y2);
+            if (FindColosestPoint == "first" )
+            {
+                Console.WriteLine( $"{X1} {Y1}");
+            }
+            else
+            {
+                Console.WriteLine($"({X2}) ({Y2}) ");
+            }
+        }
+
+        static string GetClosestPoint(int x1, int y1, int x2, int y2)
+        {
+            double distance1 = Math.Sqrt(x1 * x1 + y1 * y1);
+            double distance2 = Math.Sqrt(x2 * x2 + y2 * y2);
+            if (distance1 > distance2)
+            {
+                return "second";
+            }
+            else
+            {
+                return "first";
+            }
+        }
+    }
+}
