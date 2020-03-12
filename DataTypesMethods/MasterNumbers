@@ -1,0 +1,82 @@
+using System;
+
+namespace MAsterNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= number; i++)
+            {
+                if (IsPalindrom(i) && SumOfDigids(i) && ContainsEvenDigids(i))
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+
+        private static bool ContainsEvenDigids(int i)
+        {
+            int current = 0;
+            bool hasEven = false;
+            while (i != 0)
+            {
+                current = i % 10;     // poslednata cifra na chisloto
+                if (current % 2 == 0)  // ako e chetno
+                {
+                    hasEven = true;
+                    return hasEven;
+                }
+                i /= 10;  
+            }
+            return hasEven;
+        }
+
+        private static bool SumOfDigids(int i)
+        {
+            int sumDigids = 0;
+            while (i != 0)
+            {
+                sumDigids += i % 10;   // subira vsichki cifri
+          
+                i /= 10;           // dokato se izcherpa cqloto chislo
+                
+            }
+            if (sumDigids % 7 == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        static bool IsPalindrom(int i)
+        {
+            bool isPaindrom = false;
+            int reversed = 0;
+            int oldNum = i;
+
+            while (i != 0)
+            {
+                reversed *= 10;
+                reversed += i % 10;
+                i /= 10;
+            }
+            
+            if (reversed == oldNum)
+            {                                                   
+
+                isPaindrom = true;
+            }
+            else
+            {
+                isPaindrom = false;
+            }
+            return isPaindrom;
+        }
+    }
+}
