@@ -1,0 +1,36 @@
+using System;
+
+namespace PrintTreangle
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int cols = int.Parse(Console.ReadLine());
+            GetLineHeader(cols);
+            
+            
+        }
+
+        static void GetLineHeader(int cols)
+        {
+            for (int row = 1; row <= cols; row++)
+            {
+                for (int col = 1; col <= row; col++)
+                {
+                    Console.Write(col + " ");
+                }
+                Console.WriteLine();
+            }
+            for (int row = cols - 1; row >= 1; row--)
+            {
+                for (int col = 1; col <= row; col++)
+                {
+                    Console.Write(col + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+ 
