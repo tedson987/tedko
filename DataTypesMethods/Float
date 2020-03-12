@@ -1,0 +1,26 @@
+using System;
+
+namespace ConvertSpeedUnits
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int distance = int.Parse(Console.ReadLine());
+            int hours = int.Parse(Console.ReadLine());
+            int min = int.Parse(Console.ReadLine());
+            float sec = float.Parse(Console.ReadLine());
+
+          
+            sec += min*60 + hours*3600;
+
+            float toKM = distance / 1000;
+            float toHours = sec / 3600;
+            float toMiles = (float)distance / 1609;
+            Console.WriteLine($"{distance/sec}");
+            Console.WriteLine($"{toKM/toHours}");
+            Console.WriteLine($"{toMiles/toHours}");
+
+        }
+    }
+}
