@@ -6,7 +6,7 @@ namespace EvenToOdddigids
     {
         static void Main(string[] args)
         {
-            long number = long.Parse(Console.ReadLine());
+            long number = Math.Abs(long.Parse(Console.ReadLine()));
             string name = GetString(number);
 
             Console.WriteLine(name);
