@@ -1,0 +1,31 @@
+using System;
+
+namespace BlankMethod
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            PrintHeader();
+            Body();
+            Bottom();
+        }
+        static void PrintHeader()    //F11 da vleznash v metoda
+        {
+            Console.WriteLine("CASH RECIEPT");
+            Console.WriteLine("------------------------------");
+        }
+        static void Body()
+        {
+            Console.WriteLine("Charged to____________________");
+            Console.WriteLine("Received by___________________");
+                             
+        }
+        static void Bottom()
+        {
+            Console.WriteLine("------------------------------");
+            Console.WriteLine("© SoftUni");
+        }
+
+    }
+}
