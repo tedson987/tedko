@@ -1,0 +1,59 @@
+using System;
+
+namespace GeometryCalc
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "triangle":
+                int sight = int.Parse(Console.ReadLine());
+                int hight = int.Parse(Console.ReadLine());
+                    Console.WriteLine("{0:f2}", TriangleCalculation(sight, hight));
+                    break;
+                case "rectangle":
+                    int width = int.Parse(Console.ReadLine());
+                    int sigeHight = int.Parse(Console.ReadLine());
+                    Console.WriteLine("{0:f2}", RectangleArea(width, sigeHight));
+                    break;
+                case "square":
+                    int face = int.Parse(Console.ReadLine());
+                   
+                    Console.WriteLine("{0:f2}", GetAreaSquare(face));
+                    break;
+                case "circle":
+                    int faceCircle = int.Parse(Console.ReadLine());
+                    Console.WriteLine("{0:f2}", GetAreaCicle(faceCircle));
+                    break;
+            }
+
+
+        }
+
+        static double GetAreaCicle(double faceCircle)
+        {
+            return Math.Pow(faceCircle, 2) * Math.PI;
+        }
+
+        static double GetAreaSquare(double face)
+        {
+            return face * face;
+        }
+
+        static double RectangleArea(double width, double sigeHight)
+        {
+            return width * sigeHight;
+        }
+
+        static double TriangleCalculation(double sight, double hight)
+        {
+            return sight * hight / 2;
+        }
+
+        
+    }
+}
