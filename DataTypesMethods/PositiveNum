@@ -1,0 +1,30 @@
+using System;
+
+namespace MethodPositive
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            double num = double.Parse(Console.ReadLine());
+            GetSign(number: num);
+        }
+        static void GetSign(double number)
+        {
+            if (number > 0)
+            {
+                Console.WriteLine($"{number} is positive");
+            }
+            else if (number<0)
+            {
+                Console.WriteLine($"{number} is negative");
+            }
+           
+            else 
+            {
+                Console.WriteLine("The number is 0");
+            }
+        }
+    }
+}
